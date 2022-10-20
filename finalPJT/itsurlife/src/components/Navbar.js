@@ -2,21 +2,20 @@ import styled from "@emotion/styled";
 import theme from "../styles/theme";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
-import searchicon from "../images/searchicon.png";
-
+import Logo from "../images/Logo.png";
+import Searchicon from "../images/Searchicon.png";
 const Navbar = () => {
   const [login, setLogin] = useState(false);
 
   return (
     <NavBox>
       <div className="navbar">
-        <Link to="/mainPage" class="logolink">
-          <img src={logo} alt="logo" />
+        <Link to="/mainPage" className="logolink">
+          <img src={Logo} alt="logo" />
         </Link>
         <div className="searchbox">
           <input type="text" placeholder="#모던 #경기도 등 원하는 검색어를 입력하세요." />
-          <img src={searchicon} alt="searchicon" />
+          <img src={Searchicon} alt="searchicon" />
         </div>
         <ul style={{ float: "right" }}>
           {!login && (
@@ -121,7 +120,7 @@ const NavBox = styled.nav`
     color: ${theme.color.logoPointColor};
   }
   & > div {
-    width: 95%;
+    width: 98%;
     height: 80px;
     margin: auto;
     border-bottom: 3px solid ${theme.color.navColor};
@@ -198,5 +197,10 @@ const NavBox = styled.nav`
     & > label:active:after {
       width: 65px;
     }
+  }
+  ul::after {
+    dispaly: block;
+    content: "";
+    clear: both;
   }
 `;
